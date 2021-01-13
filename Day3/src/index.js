@@ -22,7 +22,13 @@ function mouseLeave(){
     h2.style.color = colors[1];
 }
 
+function handleResize(){
+    h2.innerHTML = `You just resized!`;
+    h2.style.color = colors[2];
+}
+
 const superEventHandler = {
     mouseEnter : h2.addEventListener('mouseenter',handleMouseOn),
     mouseLeave : h2.addEventListener('mouseleave',mouseLeave),
+    resize : window.addEventListener('resize',handleResize),
 };
