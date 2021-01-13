@@ -27,8 +27,14 @@ function handleResize(){
     h2.style.color = colors[2];
 }
 
+function handleRightClick(){
+    h2.innerHTML = `That was a right Click!`;
+    h2.style.color = colors[4];
+}
+
 const superEventHandler = {
     mouseEnter : h2.addEventListener('mouseenter',handleMouseOn),
     mouseLeave : h2.addEventListener('mouseleave',mouseLeave),
     resize : window.addEventListener('resize',handleResize),
+    rightClick : window.addEventListener('contextmenu',handleRightClick),
 };
