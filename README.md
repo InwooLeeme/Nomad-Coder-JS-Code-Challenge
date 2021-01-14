@@ -7,6 +7,7 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 - [x] Day 1 : Quiz
 - [x] Day 2 : Quiz
 - [x] Day 3 : Mouse Events.
+- [ ] Day4 : if, else, events.
 
 ## Challenge Conditions And Result.
 
@@ -24,3 +25,11 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 ### Day 3 Result
 
 ![Day 3 Result](https://nomad-coders-assets.s3.amazonaws.com/media/public/django-summernote/2019-11-28/de55f0b0-ba12-401f-9c71-f06638d2fc7e.gif)
+
+## Day 4 Challenge Conditions
+
+- Use if/else etc.
+
+### Day 4 Result
+
+![Day 4 Result](https://i.imgur.com/Sb8B8Zv.gif)
