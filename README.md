@@ -7,7 +7,7 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 - [x] Day 1 : Quiz
 - [x] Day 2 : Quiz
 - [x] Day 3 : Mouse Events.
-- [ ] Day4 : if, else, events.
+- [x] Day4 : if, else, events.
 
 ## Challenge Conditions And Result.
 
