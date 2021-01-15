@@ -1,4 +1,5 @@
 //import "./styles.css";
+import {bgImages} from "./images.js";
 
 // You're gonna need this
 const NINE_HOURS_MILLISECONDS = 32400000;
@@ -12,6 +13,7 @@ const dayController = document.querySelector('.controllDay');
 const hourController = document.querySelector('.controllHour');
 const minController = document.querySelector('.controllMin');
 const secController = document.querySelector('.controllSec');
+
 
 function getTime() {
   // Don't delete this.
@@ -28,7 +30,17 @@ function getTime() {
   secController.innerHTML = `${leftSeconds < 10 ? `0${leftSeconds}` : `${leftSeconds}`}S`;
 }
 
+function genRandom(){
+  const number = Math.floor(Math.random() * bgImages.length);
+  setMainBgImage(number);
+}
+
+function setMainBgImage(number){
+  body.style.backgroundImage = `url(${bgImages[number]})`;
+}
+
 function init() {
   setInterval(getTime, 1000);
+  setInterval(genRandom, 10000);
 }
 init();
