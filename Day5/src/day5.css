@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 html,
@@ -12,14 +12,34 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1451772741724-d20990422508?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
 }
 
 .clockContainer {
-  width: 100%;
+  width: 20%;
   height: 20vh;
+}
+
+.projectTitle {
+  color: #ffffff;
 }
 
 .clockTitle {
   display: flex;
   justify-content: center;
+}
+
+.clockTitle span {
+  margin: 0 0.25rem;
+  background: linear-gradient(
+    to right bottom,
+    #ed6767,
+    #f88398,
+    #fba2c3,
+    #fac2e4,
+    #fae0fb
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
