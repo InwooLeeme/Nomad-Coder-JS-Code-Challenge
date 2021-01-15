@@ -4,16 +4,19 @@
 const NINE_HOURS_MILLISECONDS = 32400000;
 const ONE_HOURS_MILLISECONDS = 32400000 / 9;
 const ONE_DAY_MILLISECONDS = ONE_HOURS_MILLISECONDS * 24;
+const ONE_MINUTE_MILLISECONDS = ONE_HOURS_MILLISECONDS / 60;
 
 function getTime() {
   // Don't delete this.
   const xmasDay = new Date("2021-12-24:00:00:00+0900");
-  const leftDayMilliSeconds = xmasDay - new Date();
-  const leftDays = Math.floor(leftDayMilliSeconds / ONE_DAY_MILLISECONDS);
-  
+  const leftMilliSeconds = xmasDay - new Date();
+  const leftDays = Math.floor(leftMilliSeconds / ONE_DAY_MILLISECONDS);
+  const leftHours = Math.floor((leftMilliSeconds % ONE_DAY_MILLISECONDS) / ONE_HOURS_MILLISECONDS);
+  const leftMinutes = Math.floor(((leftMilliSeconds % ONE_DAY_MILLISECONDS) % ONE_HOURS_MILLISECONDS) / ONE_MINUTE_MILLISECONDS);
+  console.log(leftDays, leftHours, leftMinutes);
 }
 
 function init() {
-  setInterval(getTime, 1000);
+  //setInterval(getTime, 1000);
 }
 init();
