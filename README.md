@@ -33,3 +33,15 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 ### Day 4 Result
 
 ![Day 4 Result](https://i.imgur.com/Sb8B8Zv.gif)
+
+## Day5 Challenge Goals
+
+- Using the template, make an app that shows the time until Christmas Eve in days, hours, minutes and seconds.
+
+## Day 5 Challenge Conditions
+
+- Try your hardest
+
+### Day 5 Result
+
+![Day 5 Result](https://nomad-coders-assets.s3.amazonaws.com/media/public/django-summernote/2019-11-28/1f99bb41-4215-4518-bca5-bb53b92923ee.gif)
