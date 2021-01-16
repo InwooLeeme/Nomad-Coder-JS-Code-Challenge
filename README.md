@@ -9,7 +9,7 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 - [x] Day 3 : Mouse Events.
 - [x] Day 4 : if, else, events.
 - [x] Day 5 : Date, Intervals!.
-- [ ] Day 6 : Events, localStorage.
+- [x] Day 6 : Events, localStorage.
 
 ## Challenge Conditions And Result.
 
