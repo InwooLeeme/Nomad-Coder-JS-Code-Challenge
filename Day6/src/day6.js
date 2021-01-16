@@ -16,19 +16,21 @@ function getCountryName(){
 // Change background image and gradient when select the country.
 
 function changeBack(text){
-    switch (text){
-        case 'KR':
-            selectKr();
-            break;
-        case 'GE':
-            selectGE();
-            break;
-        case 'TK':
-            selectTK();
-            break;
-        case 'FL':
-            selectFL();
-            break;
+    if (text === "KR") 
+    {
+        selectKr();
+    } 
+    else if (text === "GE") 
+    {
+        selectGE();
+    } 
+    else if (text === "TK")
+    {
+        selectTK();
+    } 
+    else if (text === "FL") 
+    {
+        selectFL();
     }
 }
 
