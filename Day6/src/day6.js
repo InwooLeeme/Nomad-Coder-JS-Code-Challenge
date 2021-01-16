@@ -66,11 +66,11 @@ function neverUsed(){
 
 function rememberCountry(){
     const country = localStorage.getItem(CURRENT_COUNTRY);
-    //if(country !== null){
+    if(country !== null){
         selectBar.setAttribute("value", country);
         selectBar.value = country;
         changeBack(country);
-    //}
+    }
 }
 
 function init(){
