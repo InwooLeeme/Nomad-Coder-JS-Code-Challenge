@@ -75,7 +75,7 @@ function rememberCountry(){
 
 function init(){
     selectBar.addEventListener('change', getCountryName);
-    window.addEventListener('load', rememberCountry);
+    window.onbeforeunload = rememberCountry();
 }
 
 init();
