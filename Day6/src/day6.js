@@ -23,6 +23,12 @@ function changeBack(text){
         case 'GE':
             selectGE();
             break;
+        case 'TK':
+            selectTK();
+            break;
+        case 'FL':
+            selectFL();
+            break;
     }
 }
 
@@ -35,6 +41,18 @@ function selectKr(){
 function selectGE(){
     body.style.backgroundImage = `url(https://images.unsplash.com/photo-1531816458010-fb7685eecbcb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)`;
     pgTitle.style.background = `linear-gradient(to bottom, #2f17c9, #6f56db, #a08eeb, #cfc6f6, #ffffff)`;
+    neverUsed();
+}
+
+function selectTK(){
+    body.style.backgroundImage = `url(https://images.unsplash.com/photo-1589656850652-8009782e060a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)`;
+    pgTitle.style.background = `linear-gradient(to bottom, #cd1919, #e74763, #ef76a1, #eda4d1, #ebceef, #ebceef, #ebceef, #ebceef, #eda4d1, #ef76a1, #e74763, #cd1919)`;
+    neverUsed();
+}
+
+function selectFL(){
+    body.style.backgroundImage = `url(https://images.unsplash.com/photo-1518203441944-e9578e4b1635?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8ZmlubGFuZHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)`;
+    pgTitle.style.background = `linear-gradient(to bottom, #ffffff, #dbd4fa, #b9a8f3, #977eea, #7452de, #7452de, #7452de, #7452de, #977eea, #b9a8f3, #dbd4fa, #ffffff)`;
     neverUsed();
 }
 
