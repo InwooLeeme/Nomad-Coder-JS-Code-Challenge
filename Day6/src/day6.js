@@ -4,10 +4,11 @@
 
 const body = document.querySelector("body");
 const selectBar = document.querySelector("select");
+const CURRENT_COUNTRY = "country";
 
 function getCountryName(){
     const currentName = selectBar.value;
-    console.log(currentName);
+    localStorage.setItem(CURRENT_COUNTRY, currentName);
 }
 
 function init(){
