@@ -8,9 +8,10 @@ const pgTitle = document.querySelector('h1');
 const CURRENT_COUNTRY = "country";
 
 function getCountryName(){
-    const currentName = selectBar.value;
+    const currentName = selectBar.options[selectBar.selectedIndex].value;
     localStorage.setItem(CURRENT_COUNTRY, currentName);
     changeBack(currentName);
+    //console.log(currentName);
 }
 
 // Change background image and gradient when select the country.
@@ -63,8 +64,18 @@ function neverUsed(){
     pgTitle.style.webkitTextFillColor = 'transparent';
 }
 
+function rememberCountry(){
+    const country = localStorage.getItem(CURRENT_COUNTRY);
+    //if(country !== null){
+        selectBar.setAttribute("value", country);
+        selectBar.value = country;
+        changeBack(country);
+    //}
+}
+
 function init(){
     selectBar.addEventListener('change', getCountryName);
+    window.addEventListener('load', rememberCountry);
 }
 
 init();
