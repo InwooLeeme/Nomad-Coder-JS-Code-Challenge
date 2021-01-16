@@ -8,7 +8,8 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 - [x] Day 2 : Quiz
 - [x] Day 3 : Mouse Events.
 - [x] Day 4 : if, else, events.
-- [x] Day 5 : Date, Intervals!
+- [x] Day 5 : Date, Intervals!.
+- [ ] Day 6 : Events, localStorage.
 
 ## Challenge Conditions And Result.
 
@@ -46,3 +47,16 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 ### Day 5 Result
 
 ![Day 5 Result](https://nomad-coders-assets.s3.amazonaws.com/media/public/django-summernote/2019-11-28/1f99bb41-4215-4518-bca5-bb53b92923ee.gif)
+
+## Day 6 Challenge Goals
+
+- Using the template make an app that saves my country selection.
+
+## Day 6 Challenge Conditions
+
+- Save the country selection to localStorage.
+- Load the saved selection on refresh.
+
+## Day 6 Challenge Result
+
+<img src="https://i.imgur.com/MutIt3F.gif">
