@@ -10,7 +10,7 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 - [x] Day 4 : if, else, events.
 - [x] Day 5 : Date, Intervals!.
 - [x] Day 6 : Events, localStorage.
-- [ ] Day 7 : Events, localStorage.
+- [ ] Day 7, Day 8 : Events, localStorage.
 
 ## Challenge Conditions And Result.
 
