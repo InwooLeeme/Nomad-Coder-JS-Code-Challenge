@@ -20,12 +20,34 @@ function handleSubmit(event){
     input.value = "";
 }
 
-function saveFinishedToDos(text){
+function saveFinishedToDos(li,text){
     const finishedObj = {
         id : finishedArray.length + 1,
         text : text
     }
+    li.id = finishedObj.id;
     finishedArray.push(finishedObj);
+    saveFinish(finishedArray);
+}
+
+function saveFinish(){
+    localStorage.setItem(FINISHEDLS, [JSON.stringify(finishedArray)]);
+}
+
+function updatePendingLS(li){
+    const leftPending = pendingArray.filter((todo) => {
+        return todo.id !== parseInt(li.id);
+    });
+    pendingArray = leftPending;
+    savePending(pendingArray);
+}
+
+function updateFinishLS(li){
+    const leftFinished = finishedArray.filter((todo) => {
+        return todo.id !== parseInt(li.id);
+    });
+    finishedArray = leftFinished;
+    saveFinish(finishedArray);
 }
 
 function switchBoard(event){
@@ -35,7 +57,9 @@ function switchBoard(event){
         const btn = event.path[0];
         btn.innerHTML = `⏪`;
         const text = li.firstChild.textContent;
-        saveFinishedToDos(text);
+        saveFinishedToDos(li, text);
+        // Update local storage
+        updatePendingLS(li);
         finishedUl.appendChild(li);
     }
     else{
@@ -44,20 +68,25 @@ function switchBoard(event){
         const btn = event.path[0];
         btn.innerHTML =  `✅`;
         const text = li.firstChild.textContent;
-        savePendingToDos(text);
+        savePendingToDos(li,text);
+        // Update local storage
+        updateFinishLS(li);
         pendingUl.appendChild(li);
     }
-    
-
 }
 
-function savePendingToDos(text){
+function savePending(array){
+    localStorage.setItem(PENDINGLS, [JSON.stringify(array)]);
+}
+
+function savePendingToDos(li,text){
     const pendingObj = {
         id : pendingArray.length + 1,
         text : text
     }
+    li.id = pendingObj.id;
     pendingArray.push(pendingObj);
-    
+    savePending(pendingArray);
 }
 
 function addPending(text){
@@ -69,7 +98,7 @@ function addPending(text){
     span.innerHTML = text;
     delBtn.innerHTML = `❌`;
     checkBtn.innerHTML = `✅`;
-    savePendingToDos(text);
+    savePendingToDos(li,text);
     pendingUl.appendChild(li);
     li.appendChild(span);
     li.appendChild(delBtn);
