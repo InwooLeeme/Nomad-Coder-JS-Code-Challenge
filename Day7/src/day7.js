@@ -16,77 +16,64 @@ let finishedArray = [];
 function handleSubmit(event){
     event.preventDefault();
     const currentText = input.value;
-    addPening(currentText);
+    addPending(currentText);
     input.value = "";
 }
 
-function deleteText(event){
-    const li = event.target.parentNode.parentNode;
-    pendingUl.removeChild(li);
-}
-
-function addPening(text){
-    const li = document.createElement('li');
-    const planSave = document.createElement('span');
-    planSave.classList.add('text');
-    const checkSpan = document.createElement('span');
-    const deleteSpan = document.createElement('span');
-    deleteSpan.addEventListener('click',deleteText);
-    checkSpan.innerHTML = `<i class="fas fa-check"></i>`;
-    deleteSpan.innerHTML = `<i class="fas fa-times"></i>`;
-    checkSpan.addEventListener('click',addFinished);
-    planSave.innerHTML = text;
-    addPendingObj(li, text);
-    pendingUl.appendChild(li);
-    li.appendChild(deleteSpan);
-    li.appendChild(checkSpan);
-    li.appendChild(planSave);
-}
-
-function addPendingObj(li, text){
-    const pendingObj = {
-        id : pendingArray.length + 1,
-        text : text,
-    }
-    li.id = pendingObj.id;
-    pendingArray.push(pendingObj);
-    localStorage.setItem(PENDINGLS,[JSON.stringify(pendingArray)]);
-}
-
-function addFinished(event){
-    const clickedNode = event.target.parentNode.parentNode;
-    const getText = clickedNode.querySelector('span:nth-child(3)');
-    const leftBtn = clickedNode.querySelector('span:nth-child(1)');
-    leftBtn.innerHTML = `<i class="fas fa-angle-double-left"></i>`;
-    leftBtn.addEventListener('click', sendTextToPending);
+function saveFinishedToDos(text){
     const finishedObj = {
         id : finishedArray.length + 1,
-        text : getText.textContent
+        text : text
     }
     finishedArray.push(finishedObj);
-    finishedUl.appendChild(clickedNode);
-    localStorage.setItem(FINISHEDLS,[JSON.stringify(finishedArray)]);
-    // regenerate Pending Array
-    const leftPendingArray = pendingArray.filter((todo) => {
-        return todo.id != clickedNode.id;
-    });
-    pendingArray = leftPendingArray;
-    localStorage.setItem(PENDINGLS,[JSON.stringify(pendingArray)]);
 }
 
-function sendTextToPending(event){
-    const li = event.target.parentNode.parentNode;
-    const leftBtn = li.querySelector('span:nth-child(1)');
-    const text = li.querySelector('span:nth-child(3)').textContent;
-    leftBtn.innerHTML = `<i class="fas fa-times"></i>`;
+function switchBoard(event){
+    if(event.path[2] === pendingUl){
+        // switch to finished
+        const li = event.path[1];
+        const btn = event.path[0];
+        btn.innerHTML = `⏪`;
+        const text = li.firstChild.textContent;
+        saveFinishedToDos(text);
+        finishedUl.appendChild(li);
+    }
+    else{
+        // switch to pending
+        const li = event.path[1];
+        const btn = event.path[0];
+        btn.innerHTML =  `✅`;
+        const text = li.firstChild.textContent;
+        savePendingToDos(text);
+        pendingUl.appendChild(li);
+    }
+    
+
+}
+
+function savePendingToDos(text){
+    const pendingObj = {
+        id : pendingArray.length + 1,
+        text : text
+    }
+    pendingArray.push(pendingObj);
+    
+}
+
+function addPending(text){
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    const delBtn = document.createElement('button');
+    const checkBtn = document.createElement('button');
+    checkBtn.addEventListener('click', switchBoard);
+    span.innerHTML = text;
+    delBtn.innerHTML = `❌`;
+    checkBtn.innerHTML = `✅`;
+    savePendingToDos(text);
     pendingUl.appendChild(li);
-    // regenerate Finished Array
-    addPendingObj(li, text);
-    const leftFinishedArray = finishedArray.filter((todo) => {
-        return todo.id != li.id;
-    });
-    finishedArray = leftFinishedArray;
-    localStorage.setItem(FINISHEDLS,[JSON.stringify(finishedArray)]);
+    li.appendChild(span);
+    li.appendChild(delBtn);
+    li.appendChild(checkBtn);
 }
 
 function init(){
