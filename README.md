@@ -10,7 +10,7 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 - [x] Day 4 : if, else, events.
 - [x] Day 5 : Date, Intervals!.
 - [x] Day 6 : Events, localStorage.
-- [ ] Day 7, Day 8 : Events, localStorage.
+- [x] Day 7, Day 8 : Events, localStorage.
 
 ## Challenge Conditions And Result.
 
@@ -62,17 +62,18 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 
 <img src="https://i.imgur.com/MutIt3F.gif">
 
-## Day 7 Challenge Goals
+## Day 7~8 Challenge Goals
 
 - Make a to-do list with the following features.
 
-## Day 7 Challenge Conditions
+## Day 7~8 Challenge Conditions
 
 - Make a To Do list with two boards: Pending, Finished.
 - Allow the user to switch between boards.
 - Allow the user to delete To Dos.
 - Save everything on localStorage and restore everything on refresh.
 
-### Day 7 Challenge Result
+### Day 7~8 Challenge Result
 
 <img src="https://i.imgur.com/g5s1fzT.gif">
+- Day 7~8 result url : https://codesandbox.io/s/empty-blueprint-forked-gohwj?file=/index.html

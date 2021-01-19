@@ -1,7 +1,6 @@
 // <⚠️ DONT DELETE THIS ⚠️>
 //import "./styles.css";
 // <⚠️ /DONT DELETE THIS ⚠️>
-const body = document.querySelector('body');
 const form = document.querySelector('.jsForm');
 const input = form.querySelector('input');
 const finishedUl = document.querySelector('.finishedList');
@@ -13,6 +12,8 @@ const FINISHEDLS = "finished";
 let pendingArray = [];
 let finishedArray = [];
 
+const listId = Date.now();
+
 function handleSubmit(event){
     event.preventDefault();
     const currentText = input.value;
@@ -22,7 +23,7 @@ function handleSubmit(event){
 
 function saveFinishedToDos(li,text){
     const finishedObj = {
-        id : finishedArray.length + 1,
+        id : listId,
         text : text
     }
     li.id = finishedObj.id;
@@ -36,7 +37,8 @@ function saveFinish(){
 
 function updatePendingLS(li){
     const leftPending = pendingArray.filter((todo) => {
-        return todo.id !== parseInt(li.id);
+        const text = li.querySelector('span').textContent;
+        return todo.text !== text;
     });
     pendingArray = leftPending;
     savePending(pendingArray);
@@ -44,7 +46,8 @@ function updatePendingLS(li){
 
 function updateFinishLS(li){
     const leftFinished = finishedArray.filter((todo) => {
-        return todo.id !== parseInt(li.id);
+        const text = li.querySelector('span').textContent;
+        return todo.text !== text;
     });
     finishedArray = leftFinished;
     saveFinish(finishedArray);
@@ -81,7 +84,7 @@ function savePending(array){
 
 function savePendingToDos(li,text){
     const pendingObj = {
-        id : pendingArray.length + 1,
+        id : listId,
         text : text
     }
     li.id = pendingObj.id;
@@ -121,7 +124,41 @@ function addPending(text){
     li.appendChild(checkBtn);
 }
 
+function addFinished(text){
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    const delBtn = document.createElement('button');
+    const checkBtn = document.createElement('button');
+    checkBtn.addEventListener("click", switchBoard);
+    delBtn.addEventListener('click', deleteToDos);          // delete to do list
+    span.innerHTML = text;
+    delBtn.innerHTML = `❌`;
+    checkBtn.innerHTML = `⏪`;
+    saveFinishedToDos(li,text);
+    finishedUl.appendChild(li);
+    li.appendChild(span);
+    li.appendChild(delBtn);
+    li.appendChild(checkBtn);
+}
+
+function catchRefresh(){
+    const leftPenArray = localStorage.getItem(PENDINGLS);
+    const leftFinArray = localStorage.getItem(FINISHEDLS);
+    // display left pending and finished
+    if(leftPenArray !== null){
+        const parsePending = JSON.parse(leftPenArray);
+        parsePending.forEach((pending) => {
+            addPending(pending.text);
+        });
+        const parseFinished = JSON.parse(leftFinArray);
+        parseFinished.forEach((finished) => {
+            addFinished(finished.text);
+        });
+    }
+}
+
 function init(){
+    catchRefresh();
     form.addEventListener('submit',handleSubmit);
 }
 
