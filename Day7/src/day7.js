@@ -89,12 +89,28 @@ function savePendingToDos(li,text){
     savePending(pendingArray);
 }
 
+function deleteToDos(event){
+    if(event.path[2] === pendingUl){
+        // delete in pending
+        const li = event.path[1];
+        pendingUl.removeChild(li); // remove in frontend
+        updatePendingLS(li);    
+    }
+    else{
+        // delete in finished
+        const li = event.path[1];
+        finishedUl.removeChild(li); // remove in frontend
+        updateFinishLS(li);   
+    }
+}
+
 function addPending(text){
     const li = document.createElement('li');
     const span = document.createElement('span');
     const delBtn = document.createElement('button');
     const checkBtn = document.createElement('button');
-    checkBtn.addEventListener('click', switchBoard);
+    checkBtn.addEventListener('click', switchBoard);        // switch boarding event
+    delBtn.addEventListener('click', deleteToDos);          // delete to do list
     span.innerHTML = text;
     delBtn.innerHTML = `❌`;
     checkBtn.innerHTML = `✅`;
