@@ -10,7 +10,7 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 - [x] Day 4 : if, else, events.
 - [x] Day 5 : Date, Intervals!.
 - [x] Day 6 : Events, localStorage.
-- [x] Day 7, Day 8 : Events, localStorage.
+- [x] Day 8, Day 9 : Events, localStorage.
 
 ## Challenge Conditions And Result.
 
@@ -62,18 +62,37 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 
 <img src="https://i.imgur.com/MutIt3F.gif">
 
-## Day 7~8 Challenge Goals
+## Day 8~9 Challenge Goals
 
 - Make a to-do list with the following features.
 
-## Day 7~8 Challenge Conditions
+## Day 8~9 Challenge Conditions
 
 - Make a To Do list with two boards: Pending, Finished.
 - Allow the user to switch between boards.
 - Allow the user to delete To Dos.
 - Save everything on localStorage and restore everything on refresh.
 
-### Day 7~8 Challenge Result
+### Day 8~9 Challenge Result
 
 <img src="https://i.imgur.com/g5s1fzT.gif">
 - Day 7~8 result url : https://codesandbox.io/s/empty-blueprint-forked-gohwj?file=/index.html
+
+## Day 10 JS Casino
+
+## Day 10 Challenge goals
+
+- Make a number guessing game using Javascript!
+
+## Day 10 Challenge Conditions
+
+- Find a random number on a range between 0 and a number defined by the user.
+- Use range input.
+- Update the range value in real time.
+- Only play after the user chooses a number.
+- Notify the user if the game is lost or won.
+- Don't give up.
+
+### Day 10 JS Casino Result
+
+<img src="https://i.imgur.com/uK7mDZv.gif">
