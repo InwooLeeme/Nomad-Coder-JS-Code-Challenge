@@ -3,10 +3,11 @@
 // <⚠️ /DONT DELETE THIS ⚠️>
 
 const rangeBar = document.querySelector('.setRange');
+const displayRange = document.getElementById("changeText");
 
 function handleRange(){
     const currentRange = rangeBar.value;
-    console.log(currentRange);
+    displayRange.innerText = currentRange;    
 }
 
 function init(){
