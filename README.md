@@ -11,6 +11,7 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 - [x] Day 5 : Date, Intervals!.
 - [x] Day 6 : Events, localStorage.
 - [x] Day 8, Day 9 : Events, localStorage.
+- [x] Day 10 : JS Casino.
 
 ## Challenge Conditions And Result.
 
