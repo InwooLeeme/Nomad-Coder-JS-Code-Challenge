@@ -9,31 +9,31 @@
 <body>
     <div class="container">
         <div class="displaySector">
-            <input type="text" id="display">
+            <input type="text" readonly id="display">
             <button id="clear">C</button>
         </div>
         <div class="firstRow">
             <input type="button" value="1">
             <input type="button" value="2">
             <input type="button" value="3">
-            <input id="plus" type="button" value="+">
+            <button id="plus" class="operator" value="+">+</button>
         </div>
         <div class="secondRaw">
             <input type="button" value="4">
             <input type="button" value="5">
             <input type="button" value="6">
-            <input id="minus" type="button" value="-">
+            <button id="minus" class="operator" value="-">-</button>
         </div>
         <div class="thirdRaw">
             <input type="button" value="7">
             <input type="button" value="8">
             <input type="button" value="9">
-            <input id="multiply" type="button" value="*">
+            <button id="multiply" class="operator" value="*">x</button>
         </div>
         <div class="fourthRaw">
             <input id="zero" type="button" value="0">
-            <input type="button" value="=">
-            <input id="division" type="button" value="/">
+            <button type="button" value="=" id="equal">=</button>
+            <button id="division" class="operator" value="/">/</button>
         </div>
     </div>
     <script src="src/day11.js"></script>
