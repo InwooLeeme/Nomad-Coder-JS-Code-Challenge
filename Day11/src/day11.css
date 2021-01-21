@@ -11,6 +11,7 @@ body {
 .container {
   width: 45rem;
   height: 25rem;
+  background-color: #1e272e;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -20,15 +21,20 @@ body {
 
 .container .display {
   width: 30rem;
-  border: 1px solid black;
   height: 3.25rem;
-  flex: 3;
+  flex: 3.2;
+  color: #ffffff;
 }
 
 .display,
 #clear {
   margin: 0.5rem;
   border-radius: 1.5rem;
+  font-size: 1.5rem;
+}
+
+#clear {
+  background-color: #b2bec3;
 }
 
 .firstRow,
@@ -50,8 +56,18 @@ input[type="button"] {
   outline: none;
   flex: 1;
   border-radius: 1.5rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  background-color: #485460;
 }
 
 #zero {
   flex: 2.2;
+}
+
+#plus,
+#minus,
+#multiply,
+#division {
+  background-color: #ffa801;
 }
