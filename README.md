@@ -97,3 +97,21 @@ Nomad Coder JavaScript 2 Weeks Code Challenge.
 ### Day 10 JS Casino Result
 
 <img src="https://i.imgur.com/uK7mDZv.gif">
+
+## Day 11 JS Calculator!
+
+## Day 11 Challenge goals
+
+- Make a calculator using only Vanilla JS!
+
+## Day 11 Challenge Conditions
+
+- Have a reset (C) button.
+- Support all basic operations (+ , - , \* , / )
+- Support for 'equals' ( = ) button.
+- Allow value carrying. i.e 2 2 2 2 2 without pressing equals.
+- Don't give up!
+
+### Day 11 Challenge Result
+
+<img src="https://i.imgur.com/JbIO0Bx.gif">
