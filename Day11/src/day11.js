@@ -1,8 +1,10 @@
 const keys = document.querySelectorAll("input");
+const displayContainer = document.getElementById('display');
 
 function getValue(event){
     const currentValue = event.target.value;
-    console.log(currentValue, typeof currentValue);
+    displayContainer.value += currentValue;
+    return currentValue;
 }
 
 function init(){

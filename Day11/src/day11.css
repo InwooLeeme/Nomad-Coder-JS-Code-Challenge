@@ -19,14 +19,16 @@ body {
   padding: 1rem;
 }
 
-.container .display {
+#display {
   width: 30rem;
   height: 3.25rem;
   flex: 3.2;
   color: #ffffff;
+  background-color: #1e272e;
+  border: none;
 }
 
-.display,
+#display,
 #clear {
   margin: 0.5rem;
   border-radius: 1.5rem;
