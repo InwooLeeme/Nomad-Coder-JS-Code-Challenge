@@ -2,6 +2,17 @@
 
 Nomad Coder JavaScript 2 Weeks Code Challenge.
 
+# JS Chrome Momentum
+
+## To Do Things
+
+- [x] Real Time Clock.
+- [x] Ask user name.
+- [x] Display user name.
+- [ ] To do List.
+- [ ] Change background images.
+- [ ] Use weather api to get the weather at the current location.
+
 # 2 Weeks Code Challenge
 
 - [x] Day 1 : Quiz

@@ -8,3 +8,18 @@
   justify-content: center;
   align-items: center;
 }
+
+.nameForm,
+.greeting {
+  /* visibility: hidden; */
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.view {
+  /*   visibility: visible; */
+  display: block;
+}
