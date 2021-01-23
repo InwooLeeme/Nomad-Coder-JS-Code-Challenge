@@ -1,0 +1,22 @@
+const clockContainer = document.querySelector('.clockContainer');
+const clock = document.querySelector('.clock');
+
+const date = new Date();
+
+// Clock function
+function getTime(){
+    const hour = date.getHours();
+    const minute = date.getMinutes();
+    const second = date.getSeconds();
+    clock.innerHTML = `
+        ${hour < 10 ? `0${hour}`:`${hour}`} : 
+        ${minute < 10 ? `0${minute}`:`${minute}`} : 
+        ${second < 10 ? `0${second}`:`${second}`}
+    `;
+}
+
+function init(){
+    setInterval(getTime, 1000);
+}
+
+init();

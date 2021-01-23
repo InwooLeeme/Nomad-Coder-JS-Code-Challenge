@@ -1,26 +1,9 @@
-const clockContainer = document.querySelector('.clockContainer');
-const clock = document.querySelector('.clock');
 const nameForm = document.querySelector(".nameForm");
 const nameInput = document.querySelector(".nameInput");
 const greeting = document.querySelector(".greeting");
 const userStatus = document.querySelector('.userStatus');
 
-
-const date = new Date();
-
 const USER_LS = "USER";
-
-// Clock function
-function getTime(){
-    const hour = date.getHours();
-    const minute = date.getMinutes();
-    const second = date.getSeconds();
-    clock.innerHTML = `
-        ${hour < 10 ? `0${hour}`:`${hour}`} : 
-        ${minute < 10 ? `0${minute}`:`${minute}`} : 
-        ${second < 10 ? `0${second}`:`${second}`}
-    `;
-}
 
 function displayName(userName){
     userStatus.classList.add('hide');
@@ -30,7 +13,7 @@ function displayName(userName){
 }
 
 function changeSentence(userName){
-    const currentHour = date.getHours();
+    const currentHour = new Date().getHours();
     if(7 <= currentHour && currentHour < 12){
         greeting.innerHTML = `Good morning ${userName}`;
     }
@@ -71,9 +54,4 @@ function loadName(){
     }
 }
 
-function init(){
-    setInterval(getTime, 1000);
-    loadName();
-}
-
-init();
+loadName();
