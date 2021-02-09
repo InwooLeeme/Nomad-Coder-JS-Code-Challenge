@@ -1,4 +1,7 @@
 @import "reset.css";
+@import "./style/clock.css";
+@import "./style/status.css";
+@import "./style/todo.css";
 
 img {
   position: absolute;

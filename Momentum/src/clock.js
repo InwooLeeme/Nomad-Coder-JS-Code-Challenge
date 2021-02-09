@@ -1,10 +1,10 @@
 const clockContainer = document.querySelector('.clockContainer');
 const clock = document.querySelector('.clock');
 
-const date = new Date();
 
 // Clock function
 function getTime(){
+    const date = new Date();
     const hour = date.getHours();
     const minute = date.getMinutes();
     const second = date.getSeconds();
